@@ -2,6 +2,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import userRouter from './router/userRouter.js'
+import postalRouter from './router/postalRotuer.js'
 
 
 import { createConnection } from './config/db.js'
@@ -20,7 +21,7 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/user",userRouter)
-
+app.use("/postal/",postalRouter)
 
 
 app.listen(process.env.PORT,()=>{

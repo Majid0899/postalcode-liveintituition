@@ -1,7 +1,7 @@
 
 import express from 'express'
 import dotenv from 'dotenv'
-
+import userRouter from './router/userRouter.js'
 
 
 import { createConnection } from './config/db.js'
@@ -18,6 +18,8 @@ app.use(express.json())
 app.get("/",(req,res)=>{
     res.send("Welcome to our API")
 })
+
+app.use("/user",userRouter)
 
 
 
